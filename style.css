@@ -1,0 +1,168 @@
+/* ==========================================================================
+   1. Variáveis e Estilos Globais
+   ========================================================================== */
+:root {
+    --cor-primaria: #8a9a7a;
+    --cor-primaria-escura: #5d6750;
+    --cor-secundaria: #c5d4b8;
+    --cor-fundo-claro: #f2f2f2;
+    --cor-fundo-escuro: #4b5443;
+    --cor-caixa-texto-hero: #c5d4b8;
+    --cor-caixa-texto-instrumentos: #3b4434;
+    --cor-botao: #8a9a7a;
+
+    --fonte-titulo: 'Oswald', sans-serif;
+    --fonte-corpo: 'Open Sans', sans-serif;
+    --fonte-roboto: 'Roboto', sans-serif;
+    --fonte-pt-sans: 'PT Sans', sans-serif;
+    --fonte-montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    color: #555;
+    margin: 0;
+    background-color: #fff;
+}
+.container {
+    max-width: 1140px; margin: 0 auto; padding: 0 20px; position: relative;
+}
+section {
+    padding: 60px 0;
+}
+.titulo-secao {
+    font-family: var(--fonte-titulo); font-size: 3.75rem; text-align: center; color: #333;
+}
+.subtitulo-secao {
+    font-family: var(--fonte-pt-sans); font-size: 1.5rem; max-width: 889px; margin: 30px auto 65px; text-align: center; line-height: 1.6;
+}
+.btn {
+    display: inline-block; padding: 10px 40px; text-decoration: none; text-transform: uppercase; font-weight: bold; border-radius: 4px; transition: all 0.3s;
+}
+.btn--primario { background-color: var(--cor-botao); color: #fff; border: 2px solid var(--cor-botao); }
+.btn--primario:hover { background-color: var(--cor-primaria-escura); border-color: var(--cor-primaria-escura); }
+.btn--outline-light { background-color: transparent; color: #fff; border: 2px solid #fff; }
+.btn--outline-light:hover { background-color: #fff; color: var(--cor-caixa-texto-instrumentos); }
+.btn--full { width: 100%; text-align: center; }
+
+/* ==========================================================================
+   2. Cabeçalho e Rodapé
+   ========================================================================== */
+.cabecalho { background-color: var(--cor-secundaria); }
+.cabecalho__container { display: flex; justify-content: space-between; align-items: center; min-height: 80px; }
+.cabecalho__logo-img { height: 80px; object-fit: contain; }
+.cabecalho__navegacao ul { list-style: none; display: flex; gap: 20px; margin: 0; }
+.cabecalho__navegacao a { text-decoration: none; color: #333; font-weight: bold; }
+.rodape { background-color: var(--cor-fundo-escuro); color: #fff; text-align: center; padding: 20px; }
+
+/* ==========================================================================
+   3. Seções da Página
+   ========================================================================== */
+
+/* --- Seção Hero --- */
+.hero { background-color: var(--cor-fundo-claro); overflow-x: clip; }
+.hero__container { min-height: 1000px; }
+.hero__forma-fundo { position: absolute; top: 0; left: 343px; width: 359px; height: 1171px; background-color: var(--cor-primaria); z-index: 1; }
+.hero__caixa-texto { position: absolute; top: 215px; left: -77px; width: 647px; background-color: var(--cor-caixa-texto-hero); z-index: 3; padding: 30px; }
+.hero__subtitulo { font-family: var(--fonte-roboto); font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
+.hero__titulo { font-family: var(--fonte-titulo); font-size: 4.25rem; line-height: 1.1; margin-top: 20px; color: #333; }
+.hero__imagem { position: absolute; top: 60px; right: -14px; width: 731px; height: 591px; object-fit: cover; z-index: 2; }
+.hero__grid-cards { position: absolute; bottom: 60px; left: 0; width: 1089px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; z-index: 4; }
+.card-feature { background-color: #fff; padding: 30px; box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4); }
+.card-feature__icone { width: 62px; height: 62px; }
+.card-feature__titulo { font-family: var(--fonte-pt-sans); font-weight: 700; font-size: 1.125rem; margin-top: 30px; color: #333; }
+.card-feature__descricao { font-style: italic; margin-top: 30px; }
+
+/* --- Seção Sobre --- */
+.sobre { background-color: var(--cor-fundo-claro); }
+.sobre__grid { display: grid; grid-template-columns: 1fr 1fr; max-width: 1110px; margin: 0 auto; }
+.sobre__item-texto { min-height: 432px; padding: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.sobre__item-texto h3 { font-size: 1.875rem; font-family: var(--fonte-titulo); }
+.sobre__item-texto p { font-size: 1.25rem; margin-top: 40px; }
+.sobre__item-texto--primario { background-color: var(--cor-primaria); color: #fff; }
+.sobre__item-texto--primario h3 { color: #fff; }
+.sobre__item-texto--secundario { background-color: var(--cor-secundaria); }
+.sobre__item-texto--claro { background-color: #fff; }
+.sobre__item-imagem { min-height: 432px; background-size: cover; background-position: center; }
+
+/* --- Seção Como Funciona --- */
+.como-funciona { background-color: var(--cor-fundo-claro); }
+.como-funciona__container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: flex-start; }
+.como-funciona__titulo { text-align: left; font-family: var(--fonte-montserrat); }
+.como-funciona__subtitulo { font-family: var(--fonte-montserrat); font-weight: 700; letter-spacing: 2px; }
+.como-funciona__imagem-pequena { max-width: 100%; margin-top: 30px; }
+.como-funciona__imagem-grande { max-width: 100%; margin-bottom: 30px; }
+.lista-vantagens { list-style: none; padding: 0; font-size: 1rem; }
+.lista-vantagens li { padding-left: 25px; position: relative; margin-bottom: 10px; }
+.lista-vantagens li::before { content: '✔'; position: absolute; left: 0; color: var(--cor-primaria); }
+
+/* --- Seção Instrumentos --- */
+.instrumentos { position: relative; min-height: 1129px; }
+.instrumentos__fundo-lateral { position: absolute; top: 0; left: 0; height: 1098px; width: 50%; background-color: var(--cor-primaria); z-index: 1; }
+.instrumentos__container { height: 1129px; }
+.instrumentos__imagem-wrapper { position: absolute; border-radius: 50%; background-size: cover; z-index: 2; }
+.instrumentos__imagem-wrapper--1 { width: 374px; height: 374px; top: 72px; left: 0; box-shadow: 2px 2px 29px 0 rgba(0,0,0,0.25); }
+.instrumentos__imagem-wrapper--2 { width: 552px; height: 552px; top: 252px; left: 173px; box-shadow: 0 0 40px 0 rgba(0,0,0,0.2); }
+.instrumentos__imagem-wrapper--3 { width: 445px; height: 445px; top: 180px; right: 0; }
+.instrumentos__imagem-wrapper--4 { width: 367px; height: 367px; bottom: 104px; left: 53px; }
+.instrumentos__caixa-texto { position: absolute; top: 461px; right: 133px; width: 515px; min-height: 357px; background-color: var(--cor-caixa-texto-instrumentos); color: #fff; padding: 30px; z-index: 3; }
+.instrumentos__titulo { color: #fff; margin: 0 0 20px; font-size: 2.5rem; font-family: var(--fonte-corpo); }
+.instrumentos__caixa-texto p { margin: 20px 0; }
+
+/* --- Seção Equipe --- */
+.equipe { background-color: var(--cor-primaria); padding: 60px 0; }
+.equipe__titulo { color: #fff; font-size: 3rem; margin-bottom: 60px; text-align: center; }
+.equipe__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; text-align: center; }
+.equipe__membro h3, .equipe__membro p { color: #fff; }
+.equipe__membro h3 { font-size: 1.5rem; }
+.equipe__foto { width: 213px; height: 213px; border-radius: 50%; border: 4px solid var(--cor-secundaria); object-fit: cover; }
+
+/* --- Seção Protótipo --- */
+.prototipo { position: relative; min-height: 900px; display: flex; align-items: center; }
+.prototipo__fundo-superior { position: absolute; top: 20px; left: 0; right: 0; height: 575px; background-color: var(--cor-primaria); z-index: 1; }
+.prototipo__fundo-principal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 1140px; height: 900px; background-color: var(--cor-fundo-claro); z-index: 2; }
+.prototipo__container { z-index: 3; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; text-align: center; }
+.prototipo__imagem { width: 100%; max-width: 920px; margin: 0 auto; box-shadow: 0 0 40px 0 rgba(0,0,0,0.2); }
+.prototipo__texto-wrapper { max-width: 800px; margin: 0 auto; }
+.prototipo__titulo { font-size: 3rem; }
+.prototipo__texto-wrapper p { font-size: 1.1rem; line-height: 1.7; margin: 20px 0; }
+
+/* --- Seção Contato --- */
+.contato { background-color: var(--cor-fundo-claro); }
+.contato__container { display: grid; grid-template-columns: 2fr 1.5fr 1.5fr; gap: 20px; align-items: center; }
+.contato__formulario-wrapper { padding: 30px; }
+.form-grupo { margin-bottom: 20px; }
+.form-grupo input, .form-grupo textarea { width: 100%; padding: 12px; border: none; border-bottom: 2px solid #ccc; background: transparent; font-size: 1rem; }
+.form-grupo input:focus, .form-grupo textarea:focus { outline: none; border-bottom-color: var(--cor-primaria); }
+.contato__info-wrapper { background: #fff; padding: 50px 30px; height: 100%; }
+.contato__info-wrapper h3 { color: var(--cor-primaria); margin-top: 20px; }
+.contato__info-wrapper p, .contato__info-wrapper li { color: #333; }
+.contato__info-wrapper a { color: var(--cor-primaria-escura); text-decoration: none; }
+.contato__imagem-wrapper { min-height: 565px; background-size: cover; background-position: center; }
+
+/* ==========================================================================
+   8. Responsividade
+   ========================================================================== */
+@media (max-width: 1199px) {
+    .container { max-width: 940px; }
+    .hero__container, .instrumentos, .instrumentos__container { min-height: auto; height: auto; padding-bottom: 30px; }
+    .hero__forma-fundo, .instrumentos__fundo-lateral, .instrumentos__imagem-wrapper { display: none; }
+    .hero__caixa-texto, .hero__imagem, .hero__grid-cards, .instrumentos__caixa-texto { position: static; width: auto; height: auto; left: auto; right: auto; top: auto; bottom: auto; margin: 30px auto; padding: 20px; }
+    .hero__grid-cards { grid-template-columns: 1fr 1fr; }
+    .instrumentos__caixa-texto { max-width: 515px; }
+}
+
+@media (max-width: 991px) {
+    .container { max-width: 720px; }
+    .sobre__grid, .como-funciona__container { grid-template-columns: 1fr; }
+    .equipe__grid { grid-template-columns: repeat(2, 1fr); }
+    .contato__container { grid-template-columns: 1fr; }
+    .contato__imagem-wrapper { display: none; }
+    .hero__titulo { font-size: 3rem; }
+}
+
+@media (max-width: 767px) {
+    .container { max-width: 540px; }
+    .hero__grid-cards, .equipe__grid { grid-template-columns: 1fr; }
+    .titulo-secao { font-size: 2.5rem; }
+}

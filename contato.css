@@ -1,0 +1,89 @@
+
+.contato {
+   
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 25px auto;
+    padding: 40px;
+    max-width: 1100px;
+}
+
+.contato__titulo-principal {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.contato__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contato__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+/* --- Coluna do Formulário --- */
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-bottom-color: var(--cor-primaria);
+}
+
+/* --- Coluna de Informações --- */
+.contato__info-bloco {
+    margin-bottom: 30px;
+}
+
+.contato__info-bloco h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.contato__info-bloco p,
+.contato__info-bloco li {
+    color: #555;
+}
+
+.contato__info-bloco a {
+    color: var(--cor-primaria-escura);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Responsividade da Página de Contato --- */
+@media (max-width: 991px) {
+    .contato__grid {
+        grid-template-columns: 1fr; /* Coluna única para tablets e celulares */
+        gap: 40px;
+    }
+}

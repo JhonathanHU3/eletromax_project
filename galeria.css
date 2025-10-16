@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Estilos Globais e Variáveis
+   ========================================================================== */
+:root {
+    --cor-primaria: #8a9a7a;
+    --cor-secundaria: #c5d4b8;
+    --cor-fundo-claro: #f2f2f2;
+    --cor-fundo-escuro: #4b5443;
+    --fonte-titulo: 'Oswald', sans-serif;
+    --fonte-corpo: 'Montserrat', sans-serif;
+}
+body {
+    font-family: var(--fonte-corpo); color: #333; margin: 0; background-color: var(--cor-fundo-claro);
+}
+.container {
+    max-width: 1140px; margin: 0 auto; padding: 0 20px;
+}
+section {
+    padding: 60px 0;
+}
+
+/* ==========================================================================
+   Cabeçalho e Rodapé
+   ========================================================================== */
+.cabecalho { background-color: var(--cor-secundaria); }
+.cabecalho__container { display: flex; justify-content: space-between; align-items: center; min-height: 80px; }
+.cabecalho__logo-img { height: 60px; }
+.cabecalho__navegacao ul { list-style: none; display: flex; gap: 25px; margin: 0; }
+.cabecalho__navegacao a { text-decoration: none; color: #333; font-weight: 600; }
+.rodape { background-color: var(--cor-fundo-escuro); color: #fff; text-align: center; padding: 20px; }
+
+/* ==========================================================================
+   Seção da Galeria com Carrossel CSS + JS
+   ========================================================================== */
+.galeria { display: flex; flex-direction: column; align-items: center; }
+.galeria__titulo { font-family: var(--fonte-titulo); font-size: 3rem; margin-bottom: 40px; text-align: center; color: #333; }
+
+/* --- Estrutura do Carrossel --- */
+.carrossel-container {
+    max-width: 900px; width: 100%; margin: 0 auto; position: relative; /* Necessário para posicionar as setas */
+}
+.carrossel {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; /* Essencial para a animação do scroll */
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;  
+}
+.carrossel::-webkit-scrollbar { display: none; }
+
+.carrossel__item {
+    flex: 0 0 100%; width: 100%; scroll-snap-align: center;
+}
+.carrossel__item img {
+    width: 100%; height: 500px; object-fit: cover; display: block;
+}
+
+/* --- Botões de Seta --- */
+.carrossel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+.carrossel__btn:hover {
+    background: #fff;
+}
+.carrossel__btn--prev { left: 10px; }
+.carrossel__btn--next { right: 10px; }
+
+/* --- Navegação por pontos --- */
+.carrossel__navegacao {
+    display: flex; justify-content: center; gap: 10px; margin-top: 20px;
+}
+.carrossel__nav-dot {
+    width: 12px; height: 12px; border-radius: 50%; background-color: #ccc; border: none; padding: 0; cursor: pointer; transition: all 0.3s ease;
+}
+/* Estilo do ponto ativo (controlado pelo JS) */
+.carrossel__nav-dot.is-active {
+    background-color: var(--cor-primaria);
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 767px) {
+    .galeria__titulo { font-size: 2.2rem; }
+    .carrossel__item img { height: 300px; }
+    .carrossel__btn { width: 40px; height: 40px; font-size: 20px; }
+}
