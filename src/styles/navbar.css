@@ -33,3 +33,9 @@
 .navbar-nav .bi-cart:hover {
   color: #0d6efd;
 }
+
+body {
+  /* Adiciona um espaço no topo da página
+     igual ou maior que a altura do seu navbar */
+  padding-top: 70px; 
+}

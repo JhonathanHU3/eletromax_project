@@ -1,10 +1,10 @@
 
-
 document.addEventListener("DOMContentLoaded", function() {
   const navbarPlaceholder = document.getElementById("navbar-placeholder");
   
   if (navbarPlaceholder) {
-    fetch("navbar.html")
+  
+    fetch("/pages/navbar.html") 
       .then(response => {
         if (!response.ok) {
           throw new Error("Erro ao carregar o navbar: " + response.statusText);
@@ -19,23 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
         
         navLinks.forEach(link => {
-         
+          
           const linkPath = new URL(link.href).pathname; 
           
           
-          const isHomePage = currentPath === '/' || currentPath.endsWith('/index.html');
-          const isLinkHomePage = linkPath === '/' || linkPath.endsWith('/index.html');
+          const isHomePage = (currentPath === '/' || currentPath.endsWith('/index.html'));
+          const isLinkHomePage = (linkPath === '/' || linkPath.endsWith('/index.html'));
 
           if (isHomePage && isLinkHomePage) {
-              link.classList.add('active');
-              link.setAttribute('aria-current', 'page');
-          } else if (!isHomePage && currentPath.endsWith(linkPath) && linkPath !== '/') {
-              link.classList.add('active');
-              link.setAttribute('aria-current', 'page');
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          } 
+         
+          else if (!isHomePage && currentPath === linkPath) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
           }
         });
-       
-
+        
       })
       .catch(error => {
         console.error(error);
