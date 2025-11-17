@@ -1,0 +1,100 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.produtos {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.produtos h1 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e6ef;
+  border-radius: 6px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.card h2 {
+  font-size: 15px;
+  color: #222;
+  margin: 2px 0 4px 0;
+  line-height: 1.2;
+}
+
+.preco {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 2px 0;
+}
+
+.currency {
+  font-size: 13px;
+  color: #0048a1;
+  margin-right: 4px;
+}
+
+.amount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0048a1;
+}
+
+.parcelado {
+  font-size: 13px;
+  color: #666;
+  margin: 2px 0 10px 0;
+}
+
+button {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #083a8d;
+}
