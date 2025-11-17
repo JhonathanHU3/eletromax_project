@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(data => {
         navbarPlaceholder.innerHTML = data;
         
-      
         const currentPath = window.location.pathname; 
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
         

@@ -5,8 +5,6 @@ body {
   background-color: #f9f9f9;
 }
 
-
-/* HERO */
 .hero {
   text-align: center;
   padding: 60px 20px;
@@ -46,7 +44,6 @@ body {
   color: #111;
 }
 
-/* MOTIVOS */
 .motivos {
   background-color: #f1f4f8;
   padding: 60px 20px;
@@ -78,7 +75,6 @@ body {
   transform: scale(1.03);
 }
 
-/* EQUIPE */
 .equipe {
   padding: 60px 20px;
 }
@@ -112,15 +108,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* FOOTER */
-footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
 .foto-item {
   display: block;         
   margin: 0 auto;         
@@ -129,12 +116,12 @@ footer {
 }
 .foto-funcionario {
   .card img {
-  width: 180px;        /* largura fixa */
-  height: 180px;       /* altura igual para formar um quadrado */
-  object-fit: cover;   /* corta o excesso da imagem */
-  object-position: center; /* centraliza o corte */
-  border-radius: 50%;  /* opcional: deixa redonda, tipo foto de perfil */
-  margin: 0 auto;      /* centraliza a imagem no card */
+  width: 180px;       
+  height: 180px;       
+  object-fit: cover;   
+  object-position: center; 
+  border-radius: 50%;  
+  margin: 0 auto;      
   display: block;
 }
 

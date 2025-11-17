@@ -1,16 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" aria-label="Navegação principal">
+  <div class="container">
     
-    <a class="navbar-brand" href="index.html">
-      Eletromax
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-gear-fill"></i>Eletromax
     </a>
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn-cart d-lg-none" type="button" aria-label="Carrinho de compras">
+        <i class="bi bi-cart-fill"></i>
+      </button>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.html" id="nav-inicio">Início</a>
         </li>
@@ -27,12 +33,10 @@
           <a class="nav-link" href="contato.html" id="nav-contato">Contato</a>
         </li>
       </ul>
-    </div>
-    
-    <div class="navbar-nav ms-auto">
-      <a href="carrinho.html" class="nav-link">
-        <i class="bi bi-cart" style="font-size: 1.25rem;"></i>
-      </a>
+      
+      <button class="btn-cart d-none d-lg-inline-flex ms-3" type="button" aria-label="Carrinho de compras">
+        <i class="bi bi-cart-fill"></i>
+      </button>
     </div>
 
   </div>
