@@ -1,0 +1,21 @@
+/* Remove o sublinhado padrão dos links no footer */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Efeito Hover: Muda para a cor primária (azul) ao passar o mouse */
+footer a:hover {
+    color: #0d6efd !important; /* Cor primary do Bootstrap */
+}
+
+/* Ajuste fino para os ícones sociais */
+footer .btn-outline-secondary {
+    border-color: #dee2e6;
+}
+
+footer .btn-outline-secondary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
