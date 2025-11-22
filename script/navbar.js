@@ -62,5 +62,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function toCart() {
-    window.location.href = "eletromax_project/pages/carrinho.html"
+    window.location.href = "/eletromax_project/pages/carrinho.html"
 }
