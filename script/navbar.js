@@ -1,11 +1,16 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  const navbarPlaceholder = document.getElementById("navbar-placeholder");
-  
-  if (navbarPlaceholder) {
-  
-    fetch("../pages/navbar.html") 
-      .then(response => {
+    const navbarPlaceholder = document.getElementById("navbar-placeholder");
+
+    if (navbarPlaceholder) {
+        // Verifica se a URL atual contém "/pages/" para saber se está numa subpasta
+        const isPagesFolder = window.location.pathname.includes("/pages/");
+
+        // Se estiver na pasta pages, volta um nível (..). Se estiver na raiz, acessa direto (.).
+        const basePath = isPagesFolder ? "../pages/navbar.html" : "./pages/navbar.html";
+
+      fetch(basePath)
+        .then(response => {
         if (!response.ok) {
           throw new Error("Erro ao carregar o navbar: " + response.statusText);
         }
