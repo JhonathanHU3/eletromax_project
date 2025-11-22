@@ -157,7 +157,7 @@ class CarrinhoCompras {
     }
 
     abrirCarrinho() {
-        window.location.href = '/pages/carrinho.html';
+        window.location.href = '../pages/carrinho.html';
     }
 
     renderizarCarrinho() {
@@ -170,7 +170,7 @@ class CarrinhoCompras {
                     <i class="bi bi-cart-x" style="font-size: 64px; color: #ccc;"></i>
                     <h3 class="mt-3">Seu carrinho está vazio</h3>
                     <p class="text-muted">Adicione produtos para começar suas compras</p>
-                    <a href="/pages/produtos.html" class="btn btn-primary mt-2">
+                    <a href="../pages/produtos.html" class="btn btn-primary mt-2">
                         Continuar Comprando
                     </a>
                 </div>
@@ -229,7 +229,7 @@ class CarrinhoCompras {
             this.mostrarNotificacao('Adicione produtos ao carrinho primeiro!', 'warning');
             return;
         }
-        window.location.href = '/pages/checkout.html';
+        window.location.href = '../pages/checkout.html';
     }
 
     mostrarNotificacao(mensagem, tipo = 'success') {
