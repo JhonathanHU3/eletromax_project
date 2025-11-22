@@ -60,3 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error(error));
     }
 });
+
+function toCart() {
+    window.location.href = "eletromax_project/pages/carrinho.html"
+}
