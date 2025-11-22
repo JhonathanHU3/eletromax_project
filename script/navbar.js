@@ -25,12 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 navbarPlaceholder.innerHTML = data;
 
-                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-                const navbarBrand = document.querySelector('.navbar-brand');
+                const allLinks = navbarPlaceholder.querySelectorAll('a');
 
                 const fixLink = (link) => {
                     const originalHref = link.getAttribute("href");
-                    if (!originalHref) return;
+                    if (!originalHref || originalHref === "#" || originalHref.startsWith("javascript")) return;
 
                     if (level === 2) {
                         if (originalHref === "index.html" || originalHref === "./index.html") {
@@ -48,11 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 };
 
-                navLinks.forEach(fixLink);
-                if (navbarBrand) fixLink(navbarBrand);
+                allLinks.forEach(fixLink);
 
                 const currentUrl = window.location.href;
-                navLinks.forEach(link => {
+                allLinks.forEach(link => {
                     if (link.href === currentUrl) {
                         link.classList.add('active');
                         link.setAttribute('aria-current', 'page');
