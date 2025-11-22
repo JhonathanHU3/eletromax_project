@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if (navbarPlaceholder) {
   
-    fetch("/pages/navbar.html") 
+    fetch("../pages/navbar.html") 
       .then(response => {
         if (!response.ok) {
           throw new Error("Erro ao carregar o navbar: " + response.statusText);
