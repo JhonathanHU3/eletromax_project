@@ -1,0 +1,352 @@
+/* checkout.css - Estilo Polido e Moderno */
+
+:root {
+  --primary-color: #0d6efd; /* Azul Bootstrap Padrão */
+  --primary-hover: #0b5ed7;
+  --success-color: #198754; /* Verde Bootstrap */
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* --- Seção Principal --- */
+.checkout-section {
+  padding: 60px 0;
+  min-height: 100vh;
+  /* Fundo limpo para destacar o conteúdo branco */
+  background-color: #f3f4f6; 
+}
+
+.checkout-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* --- Grid de Layout --- */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Coluna fixa para o resumo */
+  gap: 30px;
+}
+
+/* --- Cartões (Etapas) --- */
+.checkout-etapa {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+  position: relative; /* Para animações */
+}
+
+/* Cabeçalho da Etapa */
+.etapa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.etapa-header h2 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.etapa-header h2 i {
+  color: var(--primary-color);
+}
+
+.etapa-numero {
+  background: rgba(13, 110, 253, 0.1); /* Fundo azul bem clarinho */
+  color: var(--primary-color);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* --- Formulários (Estilo Bootstrap Polido) --- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15); /* Glow suave */
+  outline: 0;
+}
+
+/* Validação Visual */
+.form-control.is-invalid {
+  border-color: #dc3545;
+  background-image: none; /* Remove ícone padrão do bootstrap para ficar mais limpo */
+}
+
+.form-control.is-valid {
+  border-color: var(--success-color);
+  background-image: none;
+}
+
+/* --- Botões --- */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.25);
+}
+
+.btn-secondary {
+  background-color: #e9ecef;
+  color: var(--text-dark);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #dde0e3;
+  color: #000;
+}
+
+/* --- Resumo Lateral (Sticky) --- */
+.resumo-lateral {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--card-shadow);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.resumo-lateral h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resumo-item {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+/* --- Info Box (Pagamento) --- */
+.pagamento-info {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  margin: 25px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-box i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.info-box div strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.info-box div p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- MODAL DE SUCESSO (Clean) --- */
+.overlay-sucesso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+  backdrop-filter: blur(4px); /* Desfoque moderno */
+  z-index: 10000; /* Acima de tudo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-sucesso {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.3s ease-out;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-fechar:hover {
+  color: #333;
+}
+
+.icone-sucesso {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3);
+}
+
+.icone-sucesso i {
+  color: white;
+  font-size: 40px;
+}
+
+.modal-sucesso h2 {
+  color: var(--success-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.modal-sucesso p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* --- Animações e Utilitários --- */
+.d-none {
+  display: none !important;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+  .checkout-grid {
+    grid-template-columns: 1fr; /* Empilha em telas menores */
+  }
+  
+  .resumo-lateral {
+    position: static;
+    order: -1; /* Resumo aparece antes do formulário no mobile */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-section {
+    padding: 30px 0;
+  }
+  
+  .checkout-etapa {
+    padding: 25px;
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse; /* Botão principal em cima no mobile */
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
