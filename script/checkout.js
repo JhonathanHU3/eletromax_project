@@ -239,7 +239,7 @@ class CheckoutManager {
 
           
             setTimeout(() => {
-                window.location.href = '/index.html';
+                window.location.href = '../index.html';
             }, 4000);
         }
     }
@@ -249,7 +249,7 @@ class CheckoutManager {
         const overlay = document.getElementById('overlay-sucesso');
         if(overlay) {
             overlay.classList.add('d-none');
-            window.location.href = '/index.html'; 
+            window.location.href = '../index.html'; 
         }
     }
 
