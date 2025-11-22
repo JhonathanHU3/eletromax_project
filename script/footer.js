@@ -1,13 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("/pages/footer.html") // Busca o arquivo footer.html na raiz do projeto
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao carregar o footer");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Erro:", error));
+const footerPlaceholder = document.getElementById("footer-placeholder");
+
+    if (footerPlaceholder) {
+        const isPagesFolder = window.location.pathname.includes("/pages/");
+        const basePath = isPagesFolder ? "../pages/footer.html" : "./pages/footer.html";
+
+        fetch(basePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar o footer: " + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                if (isPagesFolder) {
+                    const footerLinks = footerPlaceholder.querySelectorAll("a");
+
+                    footerLinks.forEach(link => {
+                        const originalHref = link.getAttribute("href");
+            
+                        if (!originalHref || originalHref === "#") return;
+
+                        if (originalHref === "index.html" || originalHref === "./index.html") {
+                            link.setAttribute("href", "../index.html");
+                        } 
+                        else if (originalHref.includes("pages/")) {
+                            link.setAttribute("href", originalHref.replace("pages/", ""));
+                            link.setAttribute("href", link.getAttribute("href").replace("./", ""));
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 });
